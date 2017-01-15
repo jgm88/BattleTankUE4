@@ -32,12 +32,18 @@ private:
 	float CrosshairXLocation = 0.5;
 
 	UPROPERTY(EditAnywhere)
-	float CrosshairYLocation = 0.5;
+	float CrosshairYLocation = 0.3333;
 
 	void AimTowardsCrossAir();
 
 	// Get world location of linetrace through crosshair, true if hits landscape
 	bool GetSightRayHitLocation(FVector & HitLocation) const;
+
+	bool GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const;
+	
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000.f;
+	bool GetLookVectorHitLocation(const FVector& LookDirection, FVector& HitLocation) const;
 
 	//////////////////////////////////////////////////////////////////////////
 	// EXTERNAL ACCESS 
