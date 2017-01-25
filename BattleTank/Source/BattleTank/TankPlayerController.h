@@ -25,7 +25,7 @@ private:
 	virtual void Tick(float DeltaTime) override;
 
 	//////////////////////////////////////////////////////////////////////////
-	// CONTROLLER MANAGEMENT
+	// AIM MANAGEMENT
 	//////////////////////////////////////////////////////////////////////////
 
 	UPROPERTY(EditAnywhere)
@@ -43,6 +43,7 @@ private:
 	
 	UPROPERTY(EditAnywhere)
 	float LineTraceRange = 1000000.f;
+
 	bool GetLookVectorHitLocation(const FVector& LookDirection, FVector& HitLocation) const;
 
 	//////////////////////////////////////////////////////////////////////////

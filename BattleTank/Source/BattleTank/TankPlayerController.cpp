@@ -24,7 +24,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 }
 
 //////////////////////////////////////////////////////////////////////////
-// CONTROLLER MANAGEMENT 
+// AIM MANAGEMENT 
 //////////////////////////////////////////////////////////////////////////
 
 void ATankPlayerController::AimTowardsCrossAir()
@@ -34,9 +34,8 @@ void ATankPlayerController::AimTowardsCrossAir()
 		FVector HitLocation;
 		if (GetSightRayHitLocation(HitLocation))
 		{
-			// TODO
+			GetControlledTank()->AimAt(HitLocation);
 		}
-		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *HitLocation.ToString())
 	}
 }
 
