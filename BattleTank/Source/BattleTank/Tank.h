@@ -37,8 +37,6 @@ private:
 	ATank();
 
 	virtual void BeginPlay() override;
-	
-	virtual void Tick( float DeltaTime) override;
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
