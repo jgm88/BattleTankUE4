@@ -82,10 +82,10 @@ void UTankAimingComponent::MoveBarrelTowards(const FVector * AimDirection)
 	FRotator AimAsRotator = AimDirection->Rotation();
 	FRotator DeltaRotator = AimAsRotator - BarrelRotator;
 
-		// Move the barrel the right amount this frame
+	// Move the barrel the right amount this frame
 
 
-		// Given a max elevation speed and the frame time
-		Barrel->Elevate(5.f);
+	// Given a max elevation speed and the frame time
+	Barrel->Elevate(1.f);
 }
 

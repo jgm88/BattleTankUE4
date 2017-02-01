@@ -8,5 +8,12 @@
 
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
-	UE_LOG(LogTemp, Warning, TEXT("BARREL ELEVATING"))
+	// Using negative values to fix the rotation of the imported mesh
+	float ElevationChange = RelativeSpeed * MaxDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
+	float RawNewElevation = RelativeRotation.Roll - ElevationChange;
+	float Elevation = FMath::Clamp<float>(-RawNewElevation, MinElevationDegrees, MaxElevationDegrees);
+
+	SetRelativeRotation(FRotator(0, 0, -Elevation));
+	
+	UE_LOG(LogTemp, Warning, TEXT("BARREL ELEVATING %s"), *RelativeRotation.ToString())
 }
