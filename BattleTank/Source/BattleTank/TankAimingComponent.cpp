@@ -86,6 +86,8 @@ void UTankAimingComponent::MoveBarrelTowards(const FVector * AimDirection)
 
 
 	// Given a max elevation speed and the frame time
-	Barrel->Elevate(1.f);
+	// Using negative values to fix the rotation of the imported mesh
+	Barrel->Elevate(-DeltaRotator.Pitch);
+	Barrel->Rotate(-DeltaRotator.Pitch);
 }
 
