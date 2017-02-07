@@ -29,12 +29,17 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 }
 
+void ATank::SetBarrel(UTankBarrel * Barrel)
+{
+	TankAimingComponent->SetBarrel(Barrel);
+}
+
 void ATank::AimAt(FVector HitLocation)
 {
 	TankAimingComponent->AimAt(&HitLocation, LaunchSpeed);
 }
 
-void ATank::SetBarrel(UTankBarrel * Barrel)
+void ATank::Fire()
 {
-	TankAimingComponent->SetBarrel(Barrel);
 }
+

@@ -16,14 +16,18 @@ class BATTLETANK_API ATank : public APawn
 
 public:
 
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetBarrel(UTankBarrel* Barrel);
+
 	//////////////////////////////////////////////////////////////////////////
 	// AIM MANAGEMENT
 	//////////////////////////////////////////////////////////////////////////
 
 	void AimAt(FVector HitLocation);
 
-	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrel(UTankBarrel* Barrel);
+	UFUNCTION(BlueprintCallable)
+	void Fire();
 
 protected:
 
